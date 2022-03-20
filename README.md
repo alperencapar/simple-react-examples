@@ -1,10 +1,20 @@
 # React Basic Examples
-Hatırlatma veya örnek amaçlı basit kodlar yer almakta.  
-There are simple examples in this repo. Such as redux, router, reusable forms and multistep forms
+
+**(EN)**There are simple examples in this repo. Such as redux, router, reusable forms, multistep forms and custom hook.
+**(TR)**Hatırlatma veya örnek amaçlı basit kodlar yer almakta.  
+
+## Table Of Contents
+
+- Reusable From
+- Multi Step Form
+- react-router-dom v6
+- Basic React Redux Counter Example(without toolkit)
+- useAxios Custom Hook
 
 ## İçindekiler
 
-- Tekrar kullanılabilir form
+- Tekrar Kullanılabilir Form
 - Çok adımlı form
-- react-router-dom v6 
-- basit react redux sayaç örneği
+- react-router-dom v6
+- Basit React Redux Sayaç Örneği
+- useAxios Özel Hook
