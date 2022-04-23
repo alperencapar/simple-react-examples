@@ -2,6 +2,7 @@
 
 **(EN)**There are simple examples in this repo. Such as redux, router, reusable forms, multistep forms and custom hook.
 **(TR)**Hatırlatma veya örnek amaçlı basit kodlar yer almakta.  
+**Some examples have gif preview**
 
 ## Table Of Contents
 
@@ -10,6 +11,11 @@
 - react-router-dom v6
 - Basic React Redux Counter Example(without toolkit)
 - useAxios Custom Hook
+- Apexcharts
+- Dynamic Input Search
+- Form Validation (formik & yup)
+- Progress Bar
+- Slider
 
 ## İçindekiler
 
@@ -18,3 +24,8 @@
 - react-router-dom v6
 - Basit React Redux Sayaç Örneği
 - useAxios Özel Hook
+- Apexcharts
+- Dinamik İnput Araması
+- Form Doğrulaması (formik & yup)
+- İlerleme / Okuma Çubuğu
+- Slider
