@@ -1,0 +1,39 @@
+.App {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-container{
+  margin-top: 1em;
+  width: 300px;
+  height: auto;
+  position: relative;
+}
+
+.search-container .input-container{
+  width: 100%;
+  height: auto;
+}
+
+.search-container .input-container input{
+  width: 100%;
+  padding: 1em;
+  outline: none;
+  border: 1px solid rgb(170, 170, 170);
+}
+
+.search-container .search-result-container{
+  width: 100%;
+  position: absolute;
+  
+  left: 0;
+  background-color: rgb(197, 197, 197);
+}
+
+.search-container .search-result-container div{
+  padding-block: 8px;
+  border: 1px solid rgb(155, 155, 155);
+}
+
