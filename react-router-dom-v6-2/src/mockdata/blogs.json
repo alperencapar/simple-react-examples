@@ -1,0 +1,109 @@
+{
+	"blogs": [
+		{
+			"id": 1,
+			"title": "React ile Web Geliştirme",
+			"content": "React, modern web uygulamaları geliştirmek için kullanılan popüler bir JavaScript kütüphanesidir.",
+			"author": "John Doe",
+			"date": "2023-05-17"
+		},
+		{
+			"id": 2,
+			"title": "JavaScript Temelleri",
+			"content": "JavaScript, web sayfalarına etkileşimli özellikler eklemek için kullanılan bir programlama dilidir.",
+			"author": "Jane Smith",
+			"date": "2023-05-16"
+		},
+		{
+			"id": 3,
+			"title": "CSS ile Tasarım İpuçları",
+			"content": "CSS, web sayfalarının görünümünü ve düzenini kontrol etmek için kullanılan bir stil dilidir.",
+			"author": "Robert Johnson",
+			"date": "2023-05-15"
+		},
+		{
+			"id": 4,
+			"title": "Python ile Veri Analizi",
+			"content": "Python, veri analizi ve bilimsel hesaplama için popüler bir programlama dilidir.",
+			"author": "Emily Brown",
+			"date": "2023-05-14"
+		},
+		{
+			"id": 5,
+			"title": "Web Güvenliği Nasıl Sağlanır?",
+			"content": "Web güvenliği, uygulamaları ve kullanıcı verilerini korumak için önemli bir konudur.",
+			"author": "Michael Wilson",
+			"date": "2023-05-13"
+		},
+		{
+			"id": 6,
+			"title": "Veritabanı Yönetimi ve SQL",
+			"content": "Veritabanı yönetimi, verileri etkin bir şekilde depolama ve işleme sürecidir.",
+			"author": "Sophia Taylor",
+			"date": "2023-05-12"
+		},
+		{
+			"id": 7,
+			"title": "Mobil Uygulama Geliştirme İpuçları",
+			"content": "Mobil uygulama geliştirirken dikkate almanız gereken bazı önemli faktörler vardır.",
+			"author": "Daniel Anderson",
+			"date": "2023-05-11"
+		},
+		{
+			"id": 8,
+			"title": "Yapay Zeka ve Makine Öğrenmesi",
+			"content": "Yapay zeka ve makine öğrenmesi, günümüzde birçok alanda büyük bir etkiye sahiptir.",
+			"author": "Olivia Martin",
+			"date": "2023-05-10"
+		},
+		{
+			"id": 9,
+			"title": "Veri Yapıları ve Algoritmalar",
+			"content": "Veri yapıları ve algoritmalar, programlama problemlerini çözmek için temel bir konudur.",
+			"author": "James Thompson",
+			"date": "2023-05-09"
+		},
+		{
+			"id": 10,
+			"title": "Front-end Geliştirme Araçları",
+			"content": "Front-end geliştirme için kullanılan çeşitli araçlar vardır.",
+			"author": "Ava Garcia",
+			"date": "2023-05-08"
+		},
+		{
+			"id": 11,
+			"title": "Veri Görselleştirme ve Grafik Tasarımı",
+			"content": "Veri görselleştirme, verileri etkili bir şekilde anlamak ve sunmak için önemlidir.",
+			"author": "Benjamin Hernandez",
+			"date": "2023-05-07"
+		},
+		{
+			"id": 12,
+			"title": "Web Tasarımında Renk Seçimi",
+			"content": "Web tasarımında doğru renk seçimi, kullanıcı deneyimini iyileştirmek için önemlidir.",
+			"author": "Emma Wilson",
+			"date": "2023-05-06"
+		},
+		{
+			"id": 13,
+			"title": "Node.js ile Sunucu Tarafı Geliştirme",
+			"content": "Node.js, sunucu tarafında hızlı ve ölçeklenebilir uygulamalar geliştirmek için kullanılan bir platformdur.",
+			"author": "William Johnson",
+			"date": "2023-05-05"
+		},
+		{
+			"id": 14,
+			"title": "E-ticaret Uygulamalarında Ödeme Entegrasyonu",
+			"content": "E-ticaret uygulamalarında kullanıcıların güvenli ve sorunsuz ödeme yapabilmesi önemlidir.",
+			"author": "Mia Thompson",
+			"date": "2023-05-04"
+		},
+		{
+			"id": 15,
+			"title": "Responsive Tasarım İpuçları",
+			"content": "Responsive tasarım, farklı cihazlarda uyumlu ve kullanıcı dostu bir deneyim sağlamak için önemlidir.",
+			"author": "Noah Davis",
+			"date": "2023-05-03"
+		}
+	]
+}
