@@ -6,7 +6,6 @@ const HomePage = () => {
 		<>
 			<header>
 				<div>
-					HomePage
 					<>
 						<Header />
 					</>
