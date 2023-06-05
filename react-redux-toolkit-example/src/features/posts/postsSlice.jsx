@@ -1,34 +1,27 @@
-import { createSlice, nanoid } from "@reduxjs/toolkit"
+import { createSlice, nanoid, createAsyncThunk } from "@reduxjs/toolkit"
 import { sub } from "date-fns"
+import axios from "axios"
 
-const initialState = [
-	{
-		id: "1",
-		title: "Learning Redux Toolkit",
-		content: "I've heard good things.",
-		date: sub(new Date(), { minutes: 10 }).toISOString(),
-		reactions: {
-			thumbsUp: 0,
-			wow: 0,
-			heart: 0,
-			rocket: 0,
-			coffee: 0,
-		},
-	},
-	{
-		id: "2",
-		title: "Slices...",
-		content: "The more I say slice, the more I want pizza.",
-		date: sub(new Date(), { minutes: 5 }).toISOString(),
-		reactions: {
-			thumbsUp: 0,
-			wow: 0,
-			heart: 0,
-			rocket: 0,
-			coffee: 0,
-		},
-	},
-]
+const POSTS_URL = "https://jsonplaceholder.typicode.com/posts"
+
+const initialState = {
+	posts: [],
+	status: "idle", //idle | loading | succeeded | failed
+	error: null,
+}
+
+export const fetchPosts = createAsyncThunk("posts/fetchPosts", async () => {
+	const response = await axios.get(POSTS_URL)
+	return response.data
+})
+
+export const addNewPost = createAsyncThunk(
+	"posts/addNewPost",
+	async (initialPost) => {
+		const response = await axios.post(POSTS_URL, initialPost)
+		return response.data
+	}
+)
 
 const postsSlice = createSlice({
 	name: "posts",
@@ -38,7 +31,7 @@ const postsSlice = createSlice({
 			reducer(state, action) {
 				// ...spread
 				// normally must be mutating state but ember.js creates new state behind the stage. Note: it's only going to work inside the createSlice
-				state.push(action.payload)
+				state.posts.push(action.payload)
 			},
 			prepare(title, content, userId) {
 				return {
@@ -64,7 +57,7 @@ const postsSlice = createSlice({
 			const { postId, reaction } = action.payload
 
 			//find post
-			const existingPost = state.find((post) => post.id === postId)
+			const existingPost = state.posts.find((post) => post.id === postId)
 
 			//if post found
 			if (existingPost) {
@@ -74,9 +67,54 @@ const postsSlice = createSlice({
 			}
 		},
 	},
+	extraReducers(builder) {
+		builder
+			.addCase(fetchPosts.pending, (state) => {
+				state.status = "loading"
+			})
+			.addCase(fetchPosts.fulfilled, (state, action) => {
+				state.status = "succeeded"
+
+				let min = 1
+				//slice added beacause there was too much posts returning from api
+				const loadedPosts = action.payload.slice(0, 10).map((post) => {
+					post.date = sub(new Date(), {
+						minutes: min++,
+					}).toISOString()
+					post.reactions = {
+						thumbsUp: 0,
+						wow: 0,
+						heart: 0,
+						rocket: 0,
+						coffee: 0,
+					}
+					return post
+				})
+
+				state.posts = loadedPosts
+			})
+			.addCase(fetchPosts.rejected, (state, action) => {
+				state.status = "failed"
+				state.error = action.error.message
+			})
+			.addCase(addNewPost.fulfilled, (state, action) => {
+				action.payload.userId = Number(action.payload.userId)
+				action.payload.date = new Date().toISOString()
+				action.payload.reactions = {
+					thumbsUp: 0,
+					wow: 0,
+					heart: 0,
+					rocket: 0,
+					coffee: 0,
+				}
+				state.posts = [...state.posts, action.payload]
+			})
+	},
 })
 
-export const selectAllPosts = (state) => state.posts
+export const selectAllPosts = (state) => state.posts.posts
+export const getPostsStatus = (state) => state.posts.status
+export const getPostsError = (state) => state.posts.error
 
 export const { postAdded, reactionAdd } = postsSlice.actions
 

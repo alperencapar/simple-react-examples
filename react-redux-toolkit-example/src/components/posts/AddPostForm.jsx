@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { useNavigate } from "react-router-dom"
-import { postAdded } from "../../features/posts/postsSlice"
+import { addNewPost } from "../../features/posts/postsSlice"
 import { selectAllUsers } from "../../features/users/usersSlice"
 
 const AddPostForm = () => {
@@ -21,7 +21,13 @@ const AddPostForm = () => {
 
 	const onPostFormSubmit = () => {
 		if (title && content) {
-			dispatch(postAdded(title, content, userId))
+			dispatch(
+				addNewPost({
+					title: title,
+					body: content,
+					userId: userId,
+				})
+			)
 			setTitle("")
 			setContent("")
 

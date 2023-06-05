@@ -9,6 +9,11 @@ const reactionEmojis = {
 	rocket: "🚀",
 	coffee: "☕",
 }
+
+// reactions: {
+// 	hooray: 0,
+// },
+
 const ReactionButtons = ({ post }) => {
 	const dispatch = useDispatch()
 
